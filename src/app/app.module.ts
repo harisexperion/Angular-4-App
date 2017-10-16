@@ -6,15 +6,14 @@ import { HttpModule } from "@angular/http";
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { loginService } from "./login/login.service";
+import { customSpaceFilter } from './shared/custom-space-filter';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-
-     
-     
+    customSpaceFilter
   ],
   imports: [
     BrowserModule  , FormsModule , HttpModule , 

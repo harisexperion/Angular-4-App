@@ -29,7 +29,7 @@
                          <td><img *ngIf='showImage' [style.width.px]='25' [src]='item.imageUrl'/> </td> 
                         <td>{{item.productName}}</td>
                         <td>{{item.description}}</td>
-                        <td>{{item.productCode |lowercase}}</td>
+                        <td>{{item.productCode |lowercase | customSpaceFilter : '-'}}</td>
                         <td>{{item.price|currency:'INR':true:'1.0-2'}}</td>
                         <td>{{item.releaseDate|date}}</td>
                         <td>{{item.starRating}}</td>
