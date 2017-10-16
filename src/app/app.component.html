@@ -8,7 +8,7 @@
         <div class="panel panel-default">
               <div class="panel-heading">
                 <h3 class="panel-title"> {{title}}</h3>
-                <span> Filter <input class="form-control" type="text" [(ngModel)]='filter'/> </span>
+                <span> Filter <input class="form-control" type="text" [(ngModel)]='listFilter'/> </span>
                 <button class="btn btn-primary" (click)='showDetails()' > {{showImage? 'Hide' : 'Show'}} Image </button>
              </div>
               <div class="panel-body" *ngIf="products && products.length">
@@ -25,7 +25,7 @@
                       </tr>
                     </thead>
                     <tbody  >
-                      <tr  *ngFor="let item of products"  >
+                      <tr  *ngFor="let item of filteredProdcuts "  >
                          <td><img *ngIf='showImage' [style.width.px]='25' [src]='item.imageUrl'/> </td> 
                         <td>{{item.productName}}</td>
                         <td>{{item.description}}</td>
