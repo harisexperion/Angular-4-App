@@ -1,0 +1,44 @@
+
+
+<script src="http://mymaplist.com/js/vendor/TweenLite.min.js"></script>
+
+<div class="login_container container  ">
+<div class="row vertical-offset-100">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"> {{title}}</h3>
+                <span> Filter <input class="form-control" type="text" [(ngModel)]='filter'/> </span>
+                <button class="btn btn-primary" (click)='showDetails()' > {{showImage? 'Hide' : 'Show'}} Image </button>
+             </div>
+              <div class="panel-body" *ngIf="products && products.length">
+                <table class="table">
+                    <thead>
+                      <tr>
+                          <th> Image </th>
+                        <th>Product Name</th>
+                        <th>Description</th>
+                        <th>Product Code</th>
+                        <th>Product Price</th>
+                        <th>Released Date</th>
+                        <th>Product Rating</th>
+                      </tr>
+                    </thead>
+                    <tbody  >
+                      <tr  *ngFor="let item of products"  >
+                         <td><img *ngIf='showImage' [style.width.px]='25' [src]='item.imageUrl'/> </td> 
+                        <td>{{item.productName}}</td>
+                        <td>{{item.description}}</td>
+                        <td>{{item.productCode |lowercase}}</td>
+                        <td>{{item.price|currency:'INR':true:'1.0-2'}}</td>
+                        <td>{{item.releaseDate|date}}</td>
+                        <td>{{item.starRating}}</td>
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
